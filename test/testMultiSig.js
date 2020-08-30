@@ -63,53 +63,6 @@ contract("multiSig", (accounts) => {
         assert.equal(nonce.toNumber(), 0)
     })
 
-
-
-
-/*let createSignatures = function(signers, multisigAddr, nonce, destinationAddr, value, data, executor){
-    var msg = '0x8CbaC5e4d803bE2A3A5cd3DbE7174504c6DD0c1C'
- 
-    var h = web3.sha3(msg)
-    var sig = web3.eth.sign(address, h).slice(2)
-    var sigR = `0x${sig.slice(0, 64)}`
-    var sigS = `0x${sig.slice(64, 128)}`
-    var sigV = web3.toDecimal(sig.slice(128, 130)) + 27
-
-
- }
-
-
-let executeTransaction = async function(owners, requiredSignatures, signers, done){
-
-    let multisig = await multiSig.new(requiredSignatures, owners, {from: accounts[0]})
-    let randomAddr = web3.sha3(Math.random().toString()).slice(0,42)
-    let executor = accounts[0]
-    let msgSender = accounts[0]
-    
-    await web3.eth.sendTransaction({from: accounts[0], to: multisig.address, value: web3.toWei(web3.toBigNumber(0.1), 'ether')})
-
-    let nonce = await multisig.nonce.call()
-    assert.equal(nonce.toNumber(), 0)
-
-    let bal = await web3.eth.getBalance(multisig.address)
-    assert.equal(bal, web3.toWei(0.1, 'ether'))
-
-    for (var i=0; i<owners.length; i++) {
-      let ownerFromContract = await multisig.ownersArr.call(i)
-      assert.equal(owners[i], ownerFromContract)
-    }
-    
-    let value = web3.toWei(web3.toBigNumber(0.01), 'ether')
-    let sigs = createSigs(signers, multisig.address, nonce, randomAddr, value, '', executor)
-
-    await multisig.execute(sigV, sigR,sigS, randomAddr, value, '', executor, 21000, {from: msgSender, gasLimit: 1000000})
-
-
-}
-
-
-})
-*/
 }) 
 
 
