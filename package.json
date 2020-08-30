@@ -1,0 +1,20 @@
+{
+  "name": "multisig",
+  "version": "1.0.0",
+  "description": "",
+  "main": "truffle-config.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "solidity-coverage": "^0.7.10"
+  },
+  "dependencies": {
+    "ethers": "^5.0.9"
+  }
+}
